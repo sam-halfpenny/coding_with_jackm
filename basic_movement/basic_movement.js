@@ -8,7 +8,7 @@ class dodger{
     constructor(gamewidth,gameheight){
         this.gameheight=gameheight
         this.gamewidth=gamewidth
-        this.position={x:0,y:0}
+        this.position={x:GAME_WIDTH/2,y:GAME_HEIGHT/2}
         this.speed={x:0,y:0}
         this.size=50
         this.maxSpeed=10
@@ -36,8 +36,7 @@ class dodger{
     stopy(){
         this.speed.y=0
     }
-    update(deltaTime) {
-        if(!deltaTime) return;
+    update() {
         this.position.x += this.speed.x;
         this.position.y += this.speed.y;
         if(this.position.x<0) {
@@ -109,27 +108,21 @@ class Handler{
 
     }
 }
+
 let canvas = document.getElementById("gamescreen")
 let ctx = canvas.getContext('2d')
 
 const GAME_WIDTH=800
 const GAME_HEIGHT=600
 
-dodger = new dodger(GAME_WIDTH,GAME_HEIGHT)
-dodger.position.x = GAME_WIDTH/2 - dodger.size/2
-dodger.position.y = GAME_HEIGHT/2 - dodger.size/2
-new Handler(dodger);
-
-let lastTime = 0
-dodger.draw(ctx)
+dodger1 = new dodger(GAME_WIDTH,GAME_HEIGHT)
+new Handler(dodger1);
 
 function gameloop(timestamp) {
-    let deltaTime = timestamp - lastTime;
-    lastTime = timestamp;
     ctx.clearRect(0,0,800,600);
-    dodger.update(deltaTime);
-    dodger.draw(ctx);
-    if (!dodger.x){
+    dodger1.update();
+    dodger1.draw(ctx);
+    if (!dodger1.x){
         requestAnimationFrame(gameloop)
     }
 }
