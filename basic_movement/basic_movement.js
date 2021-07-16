@@ -81,6 +81,7 @@ class dodger{
                             //bottom right
                             this.size+=10
                             this.maxSpeed+=5
+                            score++
                         }
                     }
                 }
@@ -93,6 +94,7 @@ class dodger{
                             //top right
                             this.size+=10
                             this.maxSpeed+=5
+                            score++
                         }
                     }
                 }
@@ -105,6 +107,7 @@ class dodger{
                             //top left
                             this.size+=10
                             this.maxSpeed+=5
+                            score++
                         }
                     }
                 }
@@ -117,6 +120,7 @@ class dodger{
                             //bottom left
                             this.size+=10
                             this.maxSpeed+=5
+                            score++
                         }
                     }
                 }
@@ -129,6 +133,7 @@ class dodger{
                             //middle
                             this.size+=10
                             this.maxSpeed+=5
+                            score++
                         }
                     }
                 }
@@ -204,6 +209,7 @@ class Handler{
 
     }
 }
+let score=0
 let canvas = document.getElementById("gamescreen")
 let ctx = canvas.getContext('2d')
 
@@ -229,6 +235,9 @@ function gameloop(timestamp) {
     
     if (!dodger.x){
         requestAnimationFrame(gameloop)
+    }
+    else{
+        console.log(score)
     }
 }
 requestAnimationFrame(gameloop)
