@@ -17,7 +17,7 @@ class dodger{
             y:[]
         }
         this.size=10
-        this.maxSpeed=5
+        this.maxSpeed=1
         
         this.x=false
         this.mid=this.size/2
@@ -80,6 +80,7 @@ class dodger{
                             apple.relocate()
                             //bottom right
                             this.size+=10
+                            this.maxSpeed+=5
                         }
                     }
                 }
@@ -91,6 +92,7 @@ class dodger{
                             apple.relocate()
                             //top right
                             this.size+=10
+                            this.maxSpeed+=5
                         }
                     }
                 }
@@ -102,6 +104,7 @@ class dodger{
                             apple.relocate()
                             //top left
                             this.size+=10
+                            this.maxSpeed+=5
                         }
                     }
                 }
@@ -113,6 +116,7 @@ class dodger{
                             apple.relocate()
                             //bottom left
                             this.size+=10
+                            this.maxSpeed+=5
                         }
                     }
                 }
@@ -124,6 +128,7 @@ class dodger{
                             apple.relocate()
                             //middle
                             this.size+=10
+                            this.maxSpeed+=5
                         }
                     }
                 }
