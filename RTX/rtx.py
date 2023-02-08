@@ -57,12 +57,6 @@ class Planet():
             shadePercentage=0
         color=[self.colorRat['r']*shadePercentage*255,self.colorRat['g']*shadePercentage*255,self.colorRat['b']*shadePercentage*255,255]
         return color
-    def refract(self,surfVector,entryVector):
-        planeDef={'r':unit_vector(surfVector),'l':unit_vector(cross_product(unit_vector(cross_product(surfVector,entryVector)),surfVector))}
-        entrytheta=math.acos(dot_product(unit_vector(entryVector),{'x':-surfVector['x'],'y':-surfVector['y'],'z':-surfVector['z']}))
-        exittheta=math.asin(math.sin(entrytheta)/self.ior)
-
-
 class Background():
     def __init__(self,depth):
         self.depth=depth
