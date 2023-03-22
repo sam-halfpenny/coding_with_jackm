@@ -17,7 +17,7 @@ class dodger{
             y:[]
         }
         this.size=10
-        this.maxSpeed=1
+        this.maxSpeed=5
         
         this.x=false
         this.mid=this.size/2
@@ -91,7 +91,6 @@ class dodger{
             
                 
             }
- 
     }
 
 }
